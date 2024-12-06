@@ -74,12 +74,14 @@
 	})
 
 	$effect(() => {
-		setInterval(() => {
+    const interval = setInterval(() => {
 			const total = endDate.getTime() - startDate.getTime()
 			const done = new Date().getTime() - startDate.getTime()
 
 			progress = (100 / total) * done
 		}, 500)
+
+    return () => clearInterval(interval)
 	})
 </script>
 
