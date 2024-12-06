@@ -1,9 +1,9 @@
 export function timeToDate(time: string): Date {
-	const [h, m] = time.split(':')
-	const d = new Date()
-	d.setHours(Number(h))
-	d.setMinutes(Number(m))
-	d.setSeconds(0)
+  const [h, m] = time.split(':')
+  const d = new Date()
+  d.setHours(Number(h))
+  d.setMinutes(Number(m))
+  d.setSeconds(0)
 
-	return d
+  return d
 }
