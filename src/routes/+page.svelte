@@ -16,8 +16,6 @@
   let breaks: BreakTime[] = $state([])
   let endDate = $derived.by(() => {
     let breakDurationsInMs = 0
-    const date = timeToDate(startTime)
-
     let durationInSeconds = duration * 60 * 60
 
     if (checkPause) {
@@ -35,7 +33,7 @@
         .reduce((v, a) => v + a, 0)
     }
 
-    return new Date(date.getTime() + durationInSeconds * 1000 + breakDurationsInMs)
+    return new Date(startDate.getTime() + durationInSeconds * 1000 + breakDurationsInMs)
   })
 
   function addBreak() {
