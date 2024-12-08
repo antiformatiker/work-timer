@@ -1,7 +1,7 @@
 <script lang="ts">
   import { timeToDate, type BreakTime } from '$lib'
 
-  const { time = '08:00', timeout = 300 } = $props()
+  const { time = '08:00', timeout = 300, workingHours = 7.8 } = $props()
 
   let progress = $state(0)
   let startTime = $state(time)
@@ -9,7 +9,7 @@
   let newBreakEnd = $state(time)
   let startDate = $derived(timeToDate(startTime))
   let checkPause = $state(true)
-  let duration = $state(7.8)
+  let duration = $state(workingHours)
   let pause = $state(30)
   let checkBreak = $state(false)
   let error = $state('')
